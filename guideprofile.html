@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f3f3f3;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .profile-header {
+            text-align: center;
+        }
+        .profile-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .info-cards {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .card {
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            width: 30%;
+            text-align: center;
+        }
+        .tour-images {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .tour-images img {
+            width: 32%;
+            height: 150px;
+            background-color: #ddd;
+            border-radius: 10px;
+        }
+        .reviews {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .contact button {
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .contact-info {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .comment-box {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .comment-box textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .comment-box select, .comment-box button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h2>(Full Name)</h2>
+            <p>Age: (Age) | Location: (Location)</p>
+            <p>About: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            <div class="buttons">
+                <button>Contact Guide</button>
+                <button>Check Availability</button>
+            </div>
+        </div>
+
+        <div class="info-cards">
+            <div class="card">📍 Location: Colombo, Sri Lanka</div>
+            <div class="card">⭐ Rating: 4.9/5 (50+ Reviews)</div>
+        </div>
+
+        <div class="tour-images">
+            <img src="tour1.jpg" alt="Tour Image">
+            <img src="tour2.jpg" alt="Tour Image">
+            <img src="tour3.jpg" alt="Tour Image">
+        </div>
+
+        <div class="comment-box">
+            <h3>Leave a Review</h3>
+            <label for="rating">Rating:</label>
+            <select id="rating">
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+            </select>
+            <textarea rows="4" placeholder="Write your comment here..."></textarea>
+            <button>Submit</button>
+        </div>
+
+        <div class="reviews">
+            <h3>Reviews</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>Contact & Socials</h3>
+            <p>📧 [Email] | 📞 [Phone] | 📍 [Location]</p>
+            <p>DM on WhatsApp | Instagram | Facebook</p>
+        </div>
+
+        <div class="contact">
+            <div>Map</div>
+            <div>
+                <p>Email: info@topguide.lk</p>
+                <p>Phone: +94 XXX XXX XXXX</p>
+                <p>Location: Colombo, Sri Lanka</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
