@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0A0A0A;
+        }
+        
+         /* Navigation Bar */
+        header {
+            height: 120px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        header img {
+            width: 90px;
+            height: 70px;
+            margin-left: 10px;
+            margin-right: 30px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        nav a {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            text-decoration: none;
+            margin: 0 30px;
+            font-size: 16px;
+        }
+
+        .search-bar {
+            width: 400px;
+            display: flex;
+            align-items: center;
+            background-color: #333333;
+            border-radius: 1px;
+            margin: 30px;
+            padding: 5px 10px;
+        }
+
+        .search-bar input {
+            width: 300px;
+            border: none;
+            background: transparent;
+            outline: none;
+            color: #B2BEB5;
+            padding-left: 5px;
+            flex-grow: 1;
+                font-size:16px;
+        }
+
+        .search-bar i {
+            color: #B2BEB5;
+        }
+
+        .btn-login {
+            background: transparent;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 80px;
+                font-size: 16px;
+        }
+
+
+        .circle-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: transparent;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+            margin-right: 8px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            z-index: 1000;
+            height: 50px;
+        }
+
+        .ticket-btn {
+            background-color: #FFEB3B;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ticket-btn:hover {
+            background-color: #000;
+            color: #FFEB3B;
+            border: 1px solid #FFEB3B;
+        }
+
+        nav a:hover, 
+        nav a:focus,
+        .btn-login:hover span,
+        .btn-login:focus span {
+            color: #FFEB3B;
+            text-decoration: underline;
+        }
+
+        .btn-login:hover .circle-icon {
+            border: 2px solid #FFEB3B;
+        }
+
+        .btn-login:hover {
+            color: #FFEB3B;
+                text-decoration:underline;
+        }
+
+        .btn-login:hover .circle-icon i {
+            color: #FFEB3B;
+        }
+                 /Search bar dropdown styling/
+        .search-bar {
+            position: relative; 
+        }
+
+        .dropdown {
+            position: absolute; 
+            top: 100%; 
+            left: 0;
+            right: 0; 
+            background-color: #e0f2f1; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            display: none; 
+            z-index: 1000; 
+        }
+
+        .dropdown.show {
+            display: block;
+        }
+
+        .result-item {
+            display: flex; 
+            padding: 10px; 
+            cursor: pointer; 
+                background-color: #FFFFFF;
+        }
+
+        .result-item:hover {
+            background-color: #B2BEB5; 
+        }
+
+        .result-item img {
+            width: 70px; 
+            height: auto; 
+            margin-right: 10px; 
+        }
+
+        .result-details {
+            display: flex;
+            flex-direction: column; 
+        }
+
+        .result-title {
+            color: #0A0A0A; 
+            margin: 0; 
+        }
+
+        .result-info {
+            color: black; 
+            margin: 0; 
+        }
+        .no-results {
+            padding: 10px;
+            color: #0A0A0A; 
+            text-align: center; 
+            font-size: 14px; 
+            background-color:#FFFFFF;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin-left: 200px;
+        }
+
+        .login-container {
+            text-align: left;
+            width: 50%;
+            margin-top: 100px;
+            margin-bottom: 90px;
+            
+        }
+
+        .login-container h1 {
+            color: #FFEB3B;
+            margin: 0 0 10px;
+        }
+        .required-note {
+            font-style: italic;
+            color: #B2BEB5;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .login-container label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #FFFFFF;
+        }
+
+        .login-container input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #333333;
+            border-radius: 4px;
+            background-color: #333333;
+            color: #FFFFFF;
+        }
+
+        .login-container .forgot-password {
+            color: cyan;
+            font-style: italic;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        
+        .login-container .forgot-password:hover{
+            text-decoration: underline;
+        }
+        
+         .login-container input.error {
+            border: 2px solid red;
+            background-color: #2B2B2B;
+        }
+
+        .login-container button {
+            padding: 10px 20px;
+            background-color: #FFFFFF;
+            border: 2px solid;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            float: right;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .login-container button:hover{
+            background-color: #0A0A0A;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+        }
+
+        .register-container {
+            text-align: right;
+            width: 50%;
+            margin-top: 100px;
+        }
+
+        .register-container div {
+            color: white;
+        }
+
+        .register-container .register {
+            color: cyan;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .register-container .register:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+.footer {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 1px 50px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 1px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px;
+	text-align:left;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #FFEB3B;
+    text-decoration: underline;
+}
+
+.footer-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px 0;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    width: 90%;
+    height: auto;
+    margin: 0 2px;
+}
+
+.horizontal-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #FFEB3B;
+    margin: 0 60px;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-media-icons a {
+    margin: 0 5px;
+}
+
+.social-media-icons .social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-media-icons .social-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #FFEB3B;
+}
+
+.footer-bottom p:first-of-type {
+    font-weight: bold;
+}
+        
+       
+    </style>
+</head>
+<body>
+    <header>  
+
+    </header>
+
+    <div class="container">
+        <div class="login-container">
+            <h1>Login</h1>
+            <div class="required-note">*Indicates a required field</div>
+            <form>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                
+                <div id="loginError" class="error-message" style="display: none;"></div>
+                <div class="forgot-password">Forgot Password?</div>
+
+                <button type="submit">Login ></button>
+            </form>
+        </div>
+
+        <div class="register-container">
+            <div>Don't have an account?</div>
+            <a href="#" class="register">Register</a>
+        </div>
+    </div>
+    
+    <!--
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">MOVIES</a></li>
+                <li><a href="#">LOCATIONS</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <ul>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">CONTACT US</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <ul>
+                <li><a href="#">TERMS OF USE</a></li>
+                <li><a href="#">PRIVACY POLICY</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-logo-container">
+        <div class="horizontal-line"></div>
+        <div class="footer-logo">
+            <img src="Images/ABCLogoGrey.png" alt="ABC Cinemas Logo">
+        </div>
+        <div class="horizontal-line"></div>
+    </div>
+
+    <div class="social-media-icons">
+        <a href="#"><img src="Images/FB.png" alt="Facebook" class="social-icon"></a>
+        <a href="#"><img src="Images/Instagram.png" alt="Twitter" class="social-icon"></a>
+        <a href="#"><img src="Images/Tiktok.png" alt="Instagram" class="social-icon"></a>
+    </div>
+
+    <div class="footer-bottom p">
+        <p>&copy; 2024 ABC Cinemas. All Rights Reserved.</p>
+        <p>Developed by the NSBM Green University Software Engineering 2 Group AH.</p>
+    </div>
+</footer> 
+-->
+ 
+<!--
+     <script>
+		const movies = [
+    {
+        title: "Wicked",
+        info: "2024 | (U) | 2h 41m | English | Musical",
+        image: "Images/Wicked.png"
+    },
+    {
+        title: "GladiatorII",
+        info: "2024 | (A) | 2h 28m | English | Action",
+        image: "Images/Gladiator2.png"
+    },
+    {
+        title: "Kanguva",
+        info: "2024 | (A) | 2h 34m | Tamil | Action",
+        image: "Images/Kanguva.png"
+    },
+    {
+        title: "Mufasa: The Lion King",
+        info: "2024 | (U) | 1h 58m | English | Adventure",
+        image: "Images/Mufasa.png"
+    }
+];
+
+function showDropdown() {
+    const input = document.getElementById('searchInput');
+    const dropdown = document.getElementById('searchResults');
+    const filter = input.value.toLowerCase();
+
+    dropdown.innerHTML = '';
+
+    const filteredMovies = movies.filter(movie =>
+        movie.title.toLowerCase().startsWith(filter)
+    );
+
+    if (filteredMovies.length > 0) {
+        filteredMovies.forEach(movie => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'result-item';
+
+            const img = document.createElement('img');
+            img.src = movie.image;
+            img.alt = movie.title;
+
+            const resultDetails = document.createElement('div');
+            resultDetails.className = 'result-details';
+
+            const title = document.createElement('p');
+            title.className = 'result-title';
+            title.textContent = movie.title;
+
+            const info = document.createElement('p');
+            info.className = 'result-info';
+            info.textContent = movie.info;
+
+            resultDetails.appendChild(title);
+            resultDetails.appendChild(info);
+            resultItem.appendChild(img);
+            resultItem.appendChild(resultDetails);
+            dropdown.appendChild(resultItem);
+        });
+    } else {
+        const noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.textContent = 'No results found.';
+        dropdown.appendChild(noResults);
+    }
+    if (input.value) {
+        dropdown.classList.add('show');
+    } else {
+        dropdown.classList.remove('show');
+    }
+}
+
+document.getElementById('searchInput').addEventListener('input', showDropdown);
+
+document.addEventListener('click', (event) => {
+    const dropdown = document.getElementById('searchResults');
+    const input = document.getElementById('searchInput');
+
+   
+    if (!input.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.classList.remove('show');
+    }
+});
+
+ 
+	</script>
+-->
+    
+</body>
+</html>
