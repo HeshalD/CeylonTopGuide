@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reset Password</title>
+        <link rel="icon" href="Images/LogoFavicon.ico" type="image/x-icon">
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+                margin: 0;
+                padding: 0;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #0A0A0A;
+            }
+            /* Reset password styling */
+            .container {
+                display: flex;
+                justify-content: space-between;
+                margin-left: 200px;
+                margin-bottom: 20px;
+                max-width: 900px;
+            }
+
+            .reset-container {
+                text-align: left;
+                width: 50%;
+                margin-top: 100px;
+                margin-bottom: 100px;
+            }
+
+            .reset-container h1 {
+                color: #FFEB3B;
+                margin: 0 0 10px;
+            }
+            .required-note {
+                font-style: italic;
+                color: #B2BEB5;
+                margin-left: 2px;
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+
+            .reset-container label {
+                display: block;
+                margin: 10px 0 5px;
+                color: #FFFFFF;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            .reset-container input {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #333333;
+                border-radius: 4px;
+                background-color: #333333;
+                color: #FFFFFF;
+            }
+
+            .reset-container button {
+                padding: 10px 20px;
+                background-color: #FFFFFF;
+                border: 2px solid;
+                border-radius: 4px;
+                cursor: pointer;
+                font-family: 'Montserrat', sans-serif;
+                float: right;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            .reset-container p{
+                font-family: 'Montserrat', sans-serif;
+                color: #FFFFFF;
+                font-size: 14px;
+            }
+            .reset-container button:hover{
+                background-color: #0A0A0A;
+                color: #FFFFFF;
+                border: 2px solid #FFFFFF;
+            }
+
+        </style>
+    </head>
+    <body>
+        <%@ include file="Header.jsp" %>
+
+        <div class="container">
+            <div class="reset-container">
+                <h1>Reset Password</h1>
+                <div class="required-note">*Indicates a required field</div>
+                <form>
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" name="email" required>
+                    <p>An email with instructions on how to change your password will be sent.</p>
+
+                    <button type="submit">Send Email ></button>
+                </form>
+            </div>
+        </div>
+        <%@ include file="Footer.jsp" %>
+    </body>
+</html>
