@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Verification</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #2A9D8F; /* Theme color */
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            background-color: #104C45;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Main Container */
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px; /* Increased width */
+        }
+
+        h2 {
+            color: #104C45;
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        input {
+            width: 90%; /* Adjusted width for better alignment */
+            padding: 15px; /* Increased padding for a better feel */
+            margin: 15px 0;
+            border: 2px solid #333;
+            border-radius: 6px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #104C45;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            transition: background 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #76BAAF;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            background-color: #104C45;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        Secure Phone Verification
+    </div>
+
+    <!-- Phone Number Input Section -->
+    <div class="container">
+        <h2>Enter Your Phone Number</h2>
+        <p>Re-enter your mobile number to verify</p>
+        <input type="tel" id="phone" placeholder="Enter phone number" maxlength="10">
+        <button onclick="sendOTP()">Get OTP</button>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        &copy; 2025 Secure Verification System | All Rights Reserved
+    </div>
+
+    <script>
+        function sendOTP() {
+            let phone = document.getElementById("phone").value;
+            if (phone.length === 10 && !isNaN(phone)) {
+                alert("✅ OTP has been sent to " + phone);
+                window.location.href = "otp_verification.html"; // Redirect to OTP page
+            } else {
+                alert("❌ Please enter a valid 10-digit phone number.");
+            }
+        }
+    </script>
+
+</body>
+</html>
